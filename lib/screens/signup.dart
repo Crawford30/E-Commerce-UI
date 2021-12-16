@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commerce_app/screens/login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -202,10 +203,14 @@ class _SignUpState extends State<SignUp> {
                               height: 5,
                             ),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("I Have Already An Account"),
+                                Text("Already have An Account?"),
                                 SizedBox(width: 10),
                                 GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => Login(),),);
+                                  },
                                   child: Text("Login", style: TextStyle(
                                     color: Colors.cyan,
                                     fontSize: 20,
